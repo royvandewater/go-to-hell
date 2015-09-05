@@ -12,7 +12,7 @@ echo "Running tests..."
 go test $CHALLENGE_PATHS
 
 echo "Checking gofmt..."
-fmtRes=$(gofmt -l $CHALLENGES)
+fmtRes=$(gofmt -s -l $CHALLENGES)
 if [ -n "${fmtRes}" ]; then
 	echo -e "gofmt checking failed:\n${fmtRes}"
 	exit 255
