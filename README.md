@@ -12,8 +12,8 @@ This repository contains a number of challenges. Prove this guy wrong by complet
 
 1. Fork the repo
 2. Make the test pass `./test`
-3. Submit a pull request from a feature branch, indicating whether or not this is an example of good or bad code by prefixing the feature branch name with `good-` or `bad-`. For example, a submission for challenge1 with bad code could be `bad-challenge1`
-4. Vote on other pull requests by leaving a comment or something
+3. Submit a pull request, indicating whether or not this is an example of good or bad code by prefixing `[BAD]` or `[GOOD]` to the pull request title
+4. Vote on other people's pull requests by leaving a comment or something
 
 ## Rules
 
