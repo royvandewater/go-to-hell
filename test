@@ -18,6 +18,13 @@ if [ -n "${fmtRes}" ]; then
 	exit 255
 fi
 
+echo "Checking golint..."
+lintRes=$(golint $CHALLENGES)
+if [ -n "${lintRes}" ]; then
+	echo -e "golint checking failed:\n${lintRes}"
+	exit 255
+fi
+
 echo "Checking govet..."
 vetRes=$(go vet $CHALLENGE_PATHS)
 if [ -n "${vetRes}" ]; then
