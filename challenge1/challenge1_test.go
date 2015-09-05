@@ -4,7 +4,8 @@ import "testing"
 
 func TestCase1(t *testing.T) {
   cases := []struct {
-		in, want uint64
+		in int
+    want uint64
 	}{
 		{0, 0},
 		{1, 1},
