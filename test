@@ -1,0 +1,22 @@
+#!/bin/bash -e
+#
+TEST_FILE=royvandewater/go-to-hell/test.go
+
+echo "Running tests..."
+go test $TEST_FILE
+
+echo "Checking gofmt..."
+fmtRes=$(gofmt -l $FMT)
+if [ -n "${fmtRes}" ]; then
+	echo -e "gofmt checking failed:\n${fmtRes}"
+	exit 255
+fi
+
+echo "Checking govet..."
+vetRes=$(go vet $TEST)
+if [ -n "${vetRes}" ]; then
+	echo -e "govet checking failed:\n${vetRes}"
+	exit 255
+fi
+
+echo "Success"
