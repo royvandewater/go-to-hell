@@ -1,19 +1,25 @@
 #!/bin/bash -e
 #
-TEST_FILE=royvandewater/go-to-hell/test.go
+ORG_PATH="github.com/royvandewater"
+REPO_PATH="${ORG_PATH}/go-to-hell"
+CHALLENGES="challenge1"
+
+# split CHALLENGES into an array and prepend REPO_PATH to each local package
+split=(${CHALLENGES// / })
+CHALLENGE_PATHS=${split[@]/#/${REPO_PATH}/}
 
 echo "Running tests..."
-go test $TEST_FILE
+go test $CHALLENGE_PATHS
 
 echo "Checking gofmt..."
-fmtRes=$(gofmt -l $FMT)
+fmtRes=$(gofmt -l $CHALLENGE_PATHS)
 if [ -n "${fmtRes}" ]; then
 	echo -e "gofmt checking failed:\n${fmtRes}"
 	exit 255
 fi
 
 echo "Checking govet..."
-vetRes=$(go vet $TEST)
+vetRes=$(go vet $CHALLENGE_PATHS)
 if [ -n "${vetRes}" ]; then
 	echo -e "govet checking failed:\n${vetRes}"
 	exit 255
