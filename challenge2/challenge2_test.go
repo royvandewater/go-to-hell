@@ -16,7 +16,7 @@ func TestCase1(t *testing.T) {
 		{174, false},
 		{141, true},
 		{169, true},
-		{129, false},
+		{129, true},
 		{199, false},
 		{27, false},
 		{57, true},
