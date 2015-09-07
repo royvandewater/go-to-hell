@@ -2,7 +2,13 @@
 #
 ORG_PATH="github.com/royvandewater"
 REPO_PATH="${ORG_PATH}/go-to-hell"
-CHALLENGES="challenge1"
+CHALLENGES=$(cat ./submissions.txt)
+
+if [ -z "$CHALLENGES" ]; then
+	echo "Please put a newline seperated list of challenges in submissions.txt"
+	echo "See README.md for details"
+	exit 1
+fi
 
 # split CHALLENGES into an array and prepend REPO_PATH to each local package
 split=(${CHALLENGES// / })

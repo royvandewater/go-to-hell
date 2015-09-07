@@ -11,9 +11,14 @@ This repository contains a number of challenges. Prove this guy wrong by complet
 ## How It Works
 
 1. Fork the repo
-2. Make the test pass `./test`
-3. Submit a pull request, indicating whether or not this is an example of good or bad code by prefixing `[BAD]` or `[GOOD]` to the pull request title
-4. Vote on other people's pull requests by leaving a comment or something
+2. List the challenges you're working on in submissions.txt:
+  ```shell
+  echo "challenge1" >> submissions.txt
+  echo "challenge2" >> submissions.txt
+  ```
+3. Make the test pass `./test`
+4. Submit a pull request, indicating whether or not this is an example of good or bad code by prefixing `[BAD]` or `[GOOD]` to the pull request title
+5. Vote on other people's pull requests by leaving a comment or something
 
 ## Rules
 
