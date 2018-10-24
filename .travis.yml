@@ -6,7 +6,7 @@ matrix:
 
 install:
  - go get ${TOOLS_CMD}/vet
- - go get github.com/golang/lint/golint
+ - go get golang.org/x/lint/golint
 
 script:
  - ./test
